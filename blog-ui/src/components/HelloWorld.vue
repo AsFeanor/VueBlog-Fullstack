@@ -9,6 +9,7 @@
           <h3 style="color:red">{{ post.title }}</h3>
           <p>{{ post.content }}</p>
           <button @click="deletePost(post._id)" > delete </button>
+          <Router-link :to="{ name: 'UpdateBlog', params: { id: post._id } }">Düzenle</Router-link>
         </li>
       </ul>
     </div>
@@ -17,13 +18,14 @@
       <form @submit.prevent="createPost">
         <input v-model="newPost.title" placeholder="Title" />
         <textarea v-model="newPost.content" placeholder="Content"></textarea>
-        <button type="submit">Create Pos</button>
+        <button type="submit">Create Post</button>
       </form>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'HelloWorld',
   data() {
@@ -58,6 +60,7 @@ export default {
     console.error('Failed to delete post:', error);
   }
 },
+
 
     async createPost() {
       try {

@@ -62,7 +62,7 @@ app.post('/api/posts', async (req, res) => {
         res.status(500).json({ error: 'Failed to create post' });
     }
 });
-// Yeni bir gönderi silen endpoint
+// gönderiyi silen endpoint
 
 app.delete('/api/posts/:id', async (req, res) => {
     try {
@@ -76,6 +76,22 @@ app.delete('/api/posts/:id', async (req, res) => {
     }
 });
 
+// gönderiyi güncelleyen endpoint
+
+app.put('/api/posts/:id', async (req, res) => {
+    try {
+        const post = await Post.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (!post) { 
+             res.status(400).json({ error: 'Post not found' });
+        }
+        res.json(post);
+    } catch (err) {
+        res.status(500).json({ error: 'Failed to update post' });
+    }
+})
 app.listen(port, () => {
     console.log(`API server is running at http://localhost:${port}`);
 });
+
+
+
