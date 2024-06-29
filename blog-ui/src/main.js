@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import axios from 'axios';
 import { createRouter, createWebHistory } from 'vue-router'
+import Header from './Layouts/Header-layout.vue'
 import UpdateBlog from './components/UpdateBlog.vue'
 import HelloWorld from './components/HelloWorld.vue'
 
@@ -23,6 +24,7 @@ const router = createRouter({
 const app = createApp(App);
 
 
+app.component('Header-layout', Header);
 
 
 
