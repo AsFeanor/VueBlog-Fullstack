@@ -38,7 +38,6 @@ export default {
 </script>
 
 <template>
-  <div>
     <div class="container add_blog_container p-1">
       <div class="row">
         <div class="col-12">
@@ -70,7 +69,6 @@ export default {
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 

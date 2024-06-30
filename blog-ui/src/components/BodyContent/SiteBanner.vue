@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="col-md-6 order-md-2 order-1">
-                <div class="banner_img_container">
+                <div class="banner_img_container d-flex justify-content-center">
                     <img src="https://themes.estudiopatagon.com/wordpress/zento/wp-content/uploads/2024/03/about-2.webp" alt="">
                 </div>
             </div>
@@ -22,7 +22,10 @@
 </template>
 
 <style scoped>
-
+* {
+    padding: 0;
+    margin: 0;
+}
 #banner {
     margin-top: 200px;
 }
@@ -66,7 +69,7 @@
 
 img {
     animation: morph 10s ease-in-out infinite 0s;
-    width: 100%;
+    width: 90%;
 }
 
 

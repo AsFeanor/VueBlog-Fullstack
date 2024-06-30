@@ -1,5 +1,4 @@
 <template>
-    <div>
         <nav :class="{navbar_default: isAbcClassActive}" class="navbar navbar-dark  fixed-top">
   <div class="container">
     <router-link class="navbar-brand" to="/"><span class="nav_brand">Blog</span></router-link>
@@ -23,7 +22,6 @@
     </div>
   </div>
 </nav>
-    </div>
 </template>
 
 <script setup>

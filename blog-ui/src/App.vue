@@ -15,10 +15,9 @@ export default {
 body {
   background-color: #FAF8FF;
 }
-.wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+
+#app {
+  width: 100%;
 }
 
 </style>
