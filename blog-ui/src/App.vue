@@ -12,6 +12,5 @@ export default {
 <style>
 body {
   background-color: #FAF8FF;
-  height: 3000px;
 }
 </style>

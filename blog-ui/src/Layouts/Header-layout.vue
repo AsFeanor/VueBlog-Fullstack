@@ -134,7 +134,7 @@ a {
     color: #6A4EE9 !important;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
     .navbar_default {
         width: unset;
     margin: unset;
