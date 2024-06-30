@@ -35,6 +35,16 @@ export default {
     },
     toggleShow ()  {
       this.showPosts = !this.showPosts
+    },
+   goToUpdate(id) {
+      this.$router.push({ name: 'UpdateBlog', params: { id } })
+    },
+    deleteBlog(id) {
+      this.$axios.delete(`http://localhost:3000/api/posts/${id}`)
+        .then(() => {
+          this.posts = this.posts.filter(post => post._id !== id)
+          console.log('Post deleted successfully')
+        })
     }
    
   },
@@ -48,24 +58,24 @@ export default {
 
 <template>
   <div class="body_blogs">
-<div class="container">
-  <button @click="toggleShow" class="btn btn-primary" >Ekle+</button>
+<div class="add_button_container">
+  <button @click="toggleShow" class="btn btn-primary " >Ekle+</button>
 
 </div>
-   <div v-show="showPosts" class="container p-1">
+   <div v-show="showPosts" class="container add_blog_container p-1">
       <div class="row">
         <div  class="col-12">
           <div class="info">
-            <header>
+            <div>
               <input class="form-control mb-2" type="text" v-model="newPost.title" placeholder="Title">
 
-            </header>
+            </div>
             <div class="post-excerpt">
-             <textarea class="form-control" v-model="newPost.content"  cols="30" rows="5"></textarea>
+             <textarea class="form-control" v-model="newPost.content" placeholder="description"  cols="30" rows="5"></textarea>
             </div>
 
             <div class="info-author">
-              <button class="btn btn-primary" @click="createPost">Ekle</button>
+              <button class="btn btn-primary mt-2" @click="createPost">Ekle</button>
             </div>
           </div>
         </div>
@@ -75,16 +85,17 @@ export default {
       <div  class="row">
         <div  class="col-12">
           <div class="info">
-            <header>
+            <div>
               <h2 class="main-title title underline-effect">
-                <a>{{ blog.title }}</a>
-              </h2>
-            </header>
+                {{ blog.title }}              </h2>
+            </div>
             <div class="post-excerpt">
-              <p>{{ blog.content.slice(0,100) }}</p>
+              <p>{{ blog.content }}</p>
             </div>
 
-            <div class="info-author">
+            <div class="info-author d-flex justify-content-end">
+              <button @click="goToUpdate(blog._id)" class="btn btn-primary me-2">Düzenle</button>
+              <button @click="deleteBlog(blog._id)" class="btn btn-danger">Sil</button>
             </div>
           </div>
         </div>
@@ -113,6 +124,7 @@ export default {
   font-size: 1.8rem;
   color: rgb(106, 78, 233);
   padding-left: 10px;
+  cursor: pointer;
 }
 
 .post-excerpt p {
@@ -120,6 +132,7 @@ export default {
   margin-top: 15px;
   color: rgb(112, 111, 111);
   text-indent: 30px;
+  word-break: break-all;
 }
 .info-author p {
   text-align: end;
@@ -130,6 +143,24 @@ export default {
   color: black;
   font-size: 1rem;
   font-weight: 600;
+}
+.add_button_container {
+  margin: 50px auto 0 auto;
+  border-radius: 10px;
+  max-width: 1000px;
+}
+.add_button_container button {
+  background: #6A4EE9;
+  transition: .3s ease;
+}
+.add_button_container button:hover {
+  opacity: .8;
+}
+.add_blog_container {
+  margin: 50px auto 0 auto;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 1000px;
 }
 @media only screen and (max-width: 1140px) {
   .container {
@@ -144,6 +175,11 @@ export default {
     margin-top: 15px;
     text-indent: 30px;
   }
+  .add_button_container button {
+  background: #6A4EE9;
+  transition: .3s ease;
+  margin-left: 20px;
+}
 }
 @media only screen and (max-width: 975px) {
   .container {

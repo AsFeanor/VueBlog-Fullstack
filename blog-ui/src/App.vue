@@ -1,6 +1,8 @@
 <template>
+
   <Header-layout />
   <router-view></router-view>
+  <FooterLayout />
 </template>
 
 <script>
@@ -13,4 +15,10 @@ export default {
 body {
   background-color: #FAF8FF;
 }
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 </style>

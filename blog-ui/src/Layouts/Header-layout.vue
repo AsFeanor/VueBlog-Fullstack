@@ -2,7 +2,7 @@
     <div>
         <nav :class="{navbar_default: isAbcClassActive}" class="navbar navbar-dark  fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#"><span class="nav_brand">Blog</span></a>
+    <router-link class="navbar-brand" to="/"><span class="nav_brand">Blog</span></router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,20 +14,9 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Anasayfa</a>
+            <router-link class="nav-link active" aria-current="page" to="/">Anasayfa</router-link>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Bloglar</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              İşlemler
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Blog Ekle</a></li>
-             
-            </ul>
-          </li>
+          
         </ul>
       
       </div>

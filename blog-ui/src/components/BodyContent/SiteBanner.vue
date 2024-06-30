@@ -5,9 +5,8 @@
 
             <div class="col-md-6 order-md-1 order-2">
                 <div class="banner_info_container">
-<h1>Hi, <span>I’m Jonathan Doe</span> </h1>
+<h1 >Hi, <span>I’m Jonathan Doe</span> </h1>
 <p>I’m a <strong>design technologist</strong> in Atlanta. I like working on the front-end of the web. This is my site, <strong>Zento</strong> where I blog, share and write tutorials…</p>
-<p><span>Check Out</span> All Of My <a class="blogs_btn" href="#">Blogs</a></p>
                 </div>
             </div>
             <div class="col-md-6 order-md-2 order-1">
@@ -40,11 +39,13 @@
 }
 .banner_info_container p {
     font-size: 17px;
+    padding: 10px;
     margin: 30px 0 30px 0;
     
 }
 .banner_info_container h1 {
    margin-bottom: 30px;
+   padding: 10px;
     
 }
 .banner_container {
@@ -79,6 +80,11 @@ img {
 100% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
 }
+}
+@media only screen and (max-width: 500px) {
+ .banner_info_container {
+    text-align: center;
+ }
 }
 
 </style>
