@@ -39,18 +39,22 @@ export default {
 
 <template>
     <div class="container add_blog_container p-1">
+      <h5 class="update_blog_text">Blog Düzenle</h5>
       <div class="row">
         <div class="col-12">
           <div class="info">
-            <header>
+            <div>
+              <label class="form-label">Blog Başlığı</label>
               <input
                 class="form-control mb-2"
                 type="text"
                 v-model="post.title"
                 placeholder="Title"
               />
-            </header>
+            </div>
             <div class="post-excerpt">
+              <label class="form-label">Blog Açıklaması</label>
+
               <textarea
                 class="form-control"
                 v-model="post.content"
@@ -60,7 +64,7 @@ export default {
               ></textarea>
             </div>
 
-            <div class="info-author">
+            <div class="update_button_container">
               <button class="btn btn-primary mt-2" @click="UpdatePost">
                 Düzenle
               </button>
@@ -76,5 +80,18 @@ export default {
     
     .add_blog_container {
         margin-top: 200px;
+    }
+    .update_blog_text {
+        color: #6A4EE9;
+        font-size: 2rem;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 50px;
+    }
+    .update_button_container {
+      margin-top: 25px;
+    }
+    label {
+      color: #6A4EE9;
     }
 </style>
