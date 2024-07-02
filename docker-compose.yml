@@ -19,6 +19,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    volumes:
+      - ./blog-api:/app
     environment:
       - MONGO_URL=mongodb://mongo:27017/blog
     depends_on:
@@ -33,4 +35,3 @@ services:
 
 volumes:
   mongo-data:
-
