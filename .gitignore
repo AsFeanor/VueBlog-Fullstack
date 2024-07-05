@@ -20,14 +20,17 @@ logs/
 
 # Build output
 blog-ui/dist/
+blog-api/dist/
 
 # IDE files
 blog-ui/.idea/
 blog-ui/.vscode/
 blog-ui/workspace.xml
-blog-api/.idea/
 blog-ui/vcs.xml
-
+blog-api/.idea/
+blog-api/.vscode/
+blog-api/workspace.xml
+blog-api/vcs.xml
 
 /shelf/
 # Editor-based HTTP Client requests
